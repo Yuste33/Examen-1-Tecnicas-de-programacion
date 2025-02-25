@@ -1,0 +1,15 @@
+@startuml
+package mates {
+    class Matematicas {
+        + static double generarNumeroPi(long pasos)
+    }
+}
+
+package aplicacion {
+    class Principal {
+        + static void main(String[] args)
+    }
+}
+
+Principal --> Matematicas : "Usa"
+@enduml

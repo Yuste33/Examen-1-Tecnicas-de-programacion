@@ -11,7 +11,7 @@ public class Matematicas {
             double x = -1 +2 * random.nextDouble();
             double y = -1 +2 * random.nextDouble();
 
-            if((x*y +x*y) <=1 ){
+            if((x*x + y*y) <=1 ){
                 aciertos++;
             }
         }
