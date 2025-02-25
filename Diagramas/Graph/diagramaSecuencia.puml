@@ -1,0 +1,36 @@
+@startuml
+actor Usuario
+participant "Main" as Main
+participant "Graph<Integer>" as Graph
+participant "List<Integer>" as Path
+
+Usuario -> Main: Ejecuta programa
+Main -> Graph: Crear instancia de Graph
+activate Graph
+
+Main -> Graph: addEdge(v1, v2)
+loop para cada arco
+    Graph -> Graph: Añadir arco entre v1 y v2
+end
+
+Main -> Graph: onePath(v1, v2)
+activate Graph
+Graph -> Graph: Inicializar pila (abierta) y tabla (traza)
+Graph -> Graph: Agregar v1 a la pila y a la tabla
+
+loop mientras la pila no esté vacía
+    Graph -> Graph: Sacar vértice actual de la pila
+    alt ¿Es vértice actual igual a v2?
+        Graph -> Graph: Reconstruir camino desde traza
+        Graph -> Path: Crear lista con el camino
+        Graph -> Main: Devolver camino
+    else
+        Graph -> Graph: Obtener vértices adyacentes
+        Graph -> Graph: Agregar vértices adyacentes a la pila y a la tabla
+    end
+end
+
+Graph -> Main: Devolver null (no hay camino)
+deactivate Graph
+Main -> Usuario: Mostrar resultado
+@enduml

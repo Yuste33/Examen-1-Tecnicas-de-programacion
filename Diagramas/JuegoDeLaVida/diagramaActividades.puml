@@ -1,0 +1,14 @@
+@startuml
+start
+
+:Leer estado inicial del tablero (matriz.txt);
+:Mostrar estado inicial;
+
+repeat
+    :Calcular siguiente estado;
+    :Mostrar nuevo estado;
+    :Esperar 1 segundo;
+repeat while (¿Continuar?)
+
+stop
+@enduml

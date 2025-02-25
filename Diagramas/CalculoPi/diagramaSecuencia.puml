@@ -1,0 +1,21 @@
+@startuml
+actor Usuario
+participant "Principal" as Principal
+participant "Matematicas" as Matematicas
+
+Usuario -> Principal: Ejecuta programa con argumento (pasos)
+Principal -> Matematicas: generarNumeroPi(pasos)
+activate Matematicas
+
+loop para cada punto
+    Matematicas -> Matematicas: Generar punto aleatorio (x, y)
+    Matematicas -> Matematicas: Calcular distancia al origen (d)
+    alt d <= 1
+        Matematicas -> Matematicas: Incrementar aciertos
+    end
+end
+
+Matematicas -> Principal: Devolver π ≈ 4 * (aciertos / pasos)
+deactivate Matematicas
+Principal -> Usuario: Mostrar resultado
+@enduml

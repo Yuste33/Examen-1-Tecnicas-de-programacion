@@ -1,0 +1,40 @@
+@startuml
+
+!define MAIN_COLOR #FFCC99
+!define GRAPH_COLOR #99CCFF
+!define PATH_COLOR #CCFFCC
+
+object "Main" as Main {
+    main(args: String[])
+    graph: Graph<Integer>
+    path: List<Integer>
+}
+
+object "Graph<Integer>" as Graph {
+    adjacencyList: Map<Integer, Set<Integer>>
+    addVertex(v: Integer): boolean
+    addEdge(v1: Integer, v2: Integer): boolean
+    obtainAdjacents(v: Integer): Set<Integer>
+    containsVertex(v: Integer): boolean
+    toString(): String
+    onePath(v1: Integer, v2: Integer): List<Integer>
+    buildPath(trace: Map<Integer, Integer>, v2: Integer): List<Integer>
+}
+
+object "List<Integer>" as Path {
+    add(element: Integer)
+    reverse()
+}
+
+Main -> Graph : crea y usa
+Graph -> Path : crea y devuelve
+
+note right of Graph
+    Métodos principales:
+    1. addVertex(v): Añade un vértice.
+    2. addEdge(v1, v2): Añade un arco.
+    3. onePath(v1, v2): Encuentra un camino entre dos vértices.
+    4. buildPath(trace, v2): Reconstruye el camino.
+end note
+
+@enduml

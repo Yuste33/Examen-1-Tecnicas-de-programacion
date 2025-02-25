@@ -1,0 +1,31 @@
+@startuml
+
+!define MAIN_COLOR #FFCC99
+!define TABLERO_COLOR #99CCFF
+
+object "Principal" as Principal {
+    main(args: String[])
+    tablero: Tablero
+}
+
+object "Tablero" as Tablero {
+    DIMENSION: int = 30
+    estadoActual: int[][]
+    estadoSiguiente: int[][]
+    leerEstadoActual()
+    generarEstadoActualPorMontecarlo()
+    transitarAlEstadoSiguiente()
+    toString(): String
+}
+
+Principal -> Tablero : crea y usa
+
+note right of Tablero
+    Métodos principales:
+    1. leerEstadoActual(): Lee el estado inicial desde un archivo.
+    2. generarEstadoActualPorMontecarlo(): Genera un estado aleatorio.
+    3. transitarAlEstadoSiguiente(): Calcula el siguiente estado.
+    4. toString(): Devuelve el estado actual como texto.
+end note
+
+@enduml

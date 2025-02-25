@@ -1,0 +1,27 @@
+@startuml
+
+!define MAIN_COLOR #FFCC99
+!define MATH_COLOR #99CCFF
+
+object "Principal" as Principal {
+    main(args: String[])
+    pi: double
+}
+
+object "Matematicas" as Matematicas {
+    generarNumeroPi(pasos: long)
+    aciertos: int
+    x: double
+    y: double
+}
+
+Principal -> Matematicas : llama a generarNumeroPi(pasos)
+
+note right of Matematicas
+    Método generarNumeroPi:
+    1. Genera puntos aleatorios.
+    2. Cuenta aciertos dentro del círculo.
+    3. Calcula la aproximación de π.
+end note
+
+@enduml

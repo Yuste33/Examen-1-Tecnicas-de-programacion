@@ -1,0 +1,25 @@
+@startuml
+start
+
+:Iniciar programa;
+:Leer vértices y arcos del grafo;
+:Leer vértice inicial (v1) y vértice final (v2);
+
+:Inicializar pila (abierta) y tabla (traza);
+:Agregar v1 a la pila y a la tabla;
+
+repeat
+    :Sacar vértice actual de la pila;
+    if (¿Es vértice actual igual a v2?) then (Sí)
+        :Reconstruir camino desde traza;
+        :Mostrar camino;
+        stop
+    else (No)
+        :Obtener vértices adyacentes;
+        :Agregar vértices adyacentes a la pila y a la tabla;
+    endif
+repeat while (¿Pila no vacía?)
+
+:Mostrar "No hay camino";
+stop
+@enduml

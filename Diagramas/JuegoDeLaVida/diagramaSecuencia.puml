@@ -1,0 +1,28 @@
+@startuml
+actor Usuario
+participant "Principal" as Principal
+participant "Tablero" as Tablero
+
+Usuario -> Principal: Ejecuta programa
+Principal -> Tablero: Crear instancia de Tablero
+activate Tablero
+
+alt Leer estado inicial desde archivo
+    Principal -> Tablero: leerEstadoActual()
+    Tablero -> Tablero: Leer archivo (matriz.txt)
+else Generar estado inicial aleatorio
+    Principal -> Tablero: generarEstadoActualPorMontecarlo()
+    Tablero -> Tablero: Generar estado aleatorio
+end
+
+Principal -> Tablero: transitarAlEstadoSiguiente()
+loop para cada iteración
+    Tablero -> Tablero: Calcular siguiente estado
+    Principal -> Tablero: toString()
+    Tablero -> Principal: Devolver estado actual como texto
+    Principal -> Usuario: Mostrar estado actual
+    Principal -> Tablero: transitarAlEstadoSiguiente()
+end
+
+deactivate Tablero
+@enduml

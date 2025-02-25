@@ -19,7 +19,7 @@ public class Tablero {
             String linea;
             int fila = 0;
             while ((linea = br.readLine()) != null && fila < DIMENSION) {
-                linea = linea.trim(); // Elimina espacios en blanco al principio y al final
+                linea = linea.trim();
                 for (int col = 0; col < DIMENSION && col < linea.length(); col++) {
                     estadoActual[fila][col] = Character.getNumericValue(linea.charAt(col));
                 }

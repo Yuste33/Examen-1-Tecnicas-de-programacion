@@ -1,0 +1,21 @@
+@startuml
+start
+
+:Iniciar programa;
+:Leer número de pasos (puntosTotales);
+:Inicializar aciertos = 0;
+
+repeat
+    :Generar punto aleatorio (x, y);
+    :Calcular distancia al origen (d = sqrt(x^2 + y^2));
+    if (d <= 1?) then (Sí)
+        :Incrementar aciertos;
+    else (No)
+    endif
+:Decrementar puntosTotales;
+repeat while (puntosTotales > 0?)
+
+:Calcular π ≈ 4 * (aciertos / total de puntos);
+:Mostrar resultado;
+stop
+@enduml
