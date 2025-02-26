@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"actividad_3","l":"Graph"},{"p":"<Unnamed>","l":"Main"},{"p":"actividad_1.mates","l":"Matematicas"},{"p":"actividad_1.aplicacion","l":"Principal"},{"p":"actividad_2.aplicacion","l":"Principal"},{"p":"actividad_2.dominio","l":"Tablero"}];updateSearchResults();
