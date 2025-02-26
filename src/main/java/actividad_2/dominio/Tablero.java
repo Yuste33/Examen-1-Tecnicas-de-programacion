@@ -15,8 +15,7 @@ public class Tablero {
     }
 
     public void leerEstadoActual() {
-        try (BufferedReader br = new BufferedReader(new FileReader("actividad_2/matriz.txt"))) {
-            String linea;
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/actividad_2/dominio/matriz.txt"))) {            String linea;
             int fila = 0;
             while ((linea = br.readLine()) != null && fila < DIMENSION) {
                 linea = linea.trim();
