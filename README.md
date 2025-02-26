@@ -91,4 +91,3 @@ Se debe incluir un fichero .gitignore en el repositorio para evitar subir archiv
 
 
 link al repo : https://github.com/Yuste33/Examen-1-Tecnicas-de-programacion
-link al video: https://youtu.be/mg3Odm8c1o8
