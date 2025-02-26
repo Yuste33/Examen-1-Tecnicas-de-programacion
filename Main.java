@@ -113,6 +113,5 @@ public class Main {
         } else {
             System.out.println("No hay camino entre los vértices " + v1 + " y " + v2);
         }
-
     }
 }
